@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tharun Sivaprakash | Hub</title>
+    <style>
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; background-color: #050505; }
+        
+        .landing-container { 
+            width: 100%; 
+            height: 100vh; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            overflow: hidden; 
+        }
+
+        .image-wrapper {
+            position: relative;
+            width: 100%;
+            max-height: 100vh;
+            /* The image is 1980x1080, this forces the wrapper to match perfectly */
+            aspect-ratio: 1980 / 1080; 
+        }
+
+        .landing-image { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: contain; 
+        }
+
+        /* The clickable buttons over the image */
+        .hotspot {
+            position: absolute;
+            background: transparent; 
+            border: none;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            z-index: 20;
+            text-decoration: none;
+        }
+
+        /* Animated pixelated clue above the hotspots */
+        .hotspot::after {
+            content: attr(data-clue);
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #00ff66;
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 2px;
+            white-space: nowrap;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 6px 12px;
+            border: 1px solid rgba(0, 255, 102, 0.3);
+            border-radius: 4px;
+            opacity: 0.9;
+            pointer-events: auto; /* Allow clicks */
+            cursor: pointer;
+            animation: floatPulse 2s infinite ease-in-out;
+            backdrop-filter: blur(4px);
+        }
+
+        @keyframes floatPulse {
+            0%, 100% { transform: translate(-50%, 0); box-shadow: 0 0 0 rgba(0, 255, 102, 0); }
+            50% { transform: translate(-50%, -8px); box-shadow: 0 5px 15px rgba(0, 255, 102, 0.3); }
+        }
+
+        /* Optional subtle hover effect */
+        .hotspot:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .hotspot:hover::after {
+            color: #fff;
+            border-color: #00ff66;
+            background: rgba(0, 255, 102, 0.2);
+            animation: none;
+            transform: translate(-50%, -4px);
+        }
+
+        /* Expanded the boxes slightly to make them more forgiving */
+        .btn-designer {
+            left: 49.0%;
+            top: 65.5%;
+            width: 14.0%;
+            height: 12.0%;
+        }
+
+        .btn-developer {
+            left: 70.0%;
+            top: 65.5%;
+            width: 15.5%;
+            height: 12.0%;
+        }
+
+        /* Ambient background to fill the screen dynamically without scrolling */
+        .landing-container::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url('THARUN SIVAPRAKASH.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: blur(30px) brightness(0.2);
+            z-index: 0;
+            transform: scale(1.1); /* Prevent blur edges */
+        }
+        
+        .image-wrapper {
+            z-index: 10;
+        }
+
+        /* Mobile specific enhancements */
+        @media (max-aspect-ratio: 4/3) {
+            .landing-image {
+                /* Add a subtle glow/shadow to separate it from the ambient background */
+                box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+                border-radius: 4px;
+            }
+            
+            /* Make clickable areas much larger and more forgiving on touch screens */
+            .btn-designer {
+                left: 45.0%;
+                top: 50.0%;
+                width: 22.0%;
+                height: 35.0%;
+            }
+
+            .btn-developer {
+                left: 68.0%;
+                top: 50.0%;
+                width: 22.0%;
+                height: 35.0%;
+            }
+
+            /* Make the clues permanently visible, larger, and stacked nicely on mobile */
+            .hotspot::after {
+                font-size: 14px;
+                padding: 12px 20px;
+                opacity: 1;
+                border-color: #00ff66;
+                background: rgba(0, 255, 102, 0.1);
+                box-shadow: 0 5px 15px rgba(0, 255, 102, 0.2);
+            }
+            
+            .btn-designer::after {
+                top: 110%;
+                left: 50%;
+                animation: floatPulse 2.5s infinite ease-in-out;
+            }
+
+            .btn-developer::after {
+                top: -60px;
+                left: 50%;
+                animation: floatPulse 2.5s infinite ease-in-out 1s; /* delayed animation */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="landing-container">
+        <div class="image-wrapper">
+            <img src="THARUN SIVAPRAKASH.jpg" alt="Landing Page" class="landing-image">
+            
+            <!-- Clickable areas with animated clues -->
+            <a href="designer.html" class="hotspot btn-designer" data-clue="[ ENTER DESIGNER ]"></a>
+            <a href="developer.html" class="hotspot btn-developer" data-clue="[ ENTER DEVELOPER ]"></a>
+        </div>
+    </div>
+</body>
+</html>

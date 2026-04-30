@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tharun Sivaprakash | Developer</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="developer" style="background: #060a14;">
+    <!-- Particles & Cursor -->
+    <canvas id="particleCanvas"></canvas>
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <a href="index.html" class="back-btn" id="backBtn" style="display: flex;">← BACK TO HUB</a>
+    <nav id="topNav" style="display: flex;">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div id="developer-page">
+        <!-- Hero Section -->
+        <section class="dev-hero">
+            <div class="dev-hero-bg">
+                <img src="assets/suit.png" alt="Developer Background" class="dev-hero-img">
+                <div class="dev-hero-overlay"></div>
+            </div>
+            <div class="dev-hero-content">
+                <div class="dev-hero-tag">SYSTEM_READY // 2026</div>
+                <h1 class="dev-hero-name" style="font-size: clamp(60px, 9vw, 140px);">THARUN SIVAPRAKASH</h1>
+                <p class="dev-hero-role">Bridging Hardware and Software</p>
+                <div class="dev-hero-cta">
+                    <a href="#projects" class="dev-cta-btn primary">View Systems</a>
+                    <a href="#contact" class="dev-cta-btn secondary">Initialize Contact</a>
+                </div>
+            </div>
+            <div class="dev-scroll-line">
+                <span>SCROLL</span>
+                <div class="scroll-line-bar"></div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="dev-section" id="about">
+            <div class="section-inner reveal">
+                <div class="section-tag">01 // INIT_PROFILE</div>
+                <h2 class="section-title">SUMMARY</h2>
+                <div class="about-grid">
+                    <div class="about-bio">
+                        <p>I am a motivated developer with a strong passion for creating practical technology solutions that integrate hardware and software. I have hands-on experience working with microcontrollers and web technologies, and I am eager to design innovative systems that address real-world challenges.</p>
+                    </div>
+                </div>
+
+                <!-- Education Grid -->
+                <h3 class="section-tag" style="margin-top: 48px;">EDUCATION_DATA</h3>
+                <div class="edu-grid">
+                    <div class="edu-card">
+                        <div class="edu-inst">Vellore Institute of Technology, Vellore</div>
+                        <div class="edu-degree">M.Tech Integrated Software Engineering</div>
+                        <div class="edu-meta">2022– 2027 | CGPA: 8.28</div>
+                    </div>
+                    <div class="edu-card">
+                        <div class="edu-inst">Seventh Day Adventist Higher Secondary School</div>
+                        <div class="edu-degree">12th Grade</div>
+                        <div class="edu-meta">Score: 83%</div>
+                    </div>
+                    <div class="edu-card">
+                        <div class="edu-inst">Seventh Day Adventist Higher Secondary School</div>
+                        <div class="edu-degree">10th Grade</div>
+                        <div class="edu-meta">Score: 72.4%</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills & Tech Stack -->
+        <section class="dev-section alt-bg" id="skills">
+            <div class="section-inner reveal">
+                <div class="section-tag">02 // TECH_STACK</div>
+                <h2 class="section-title">TECHNICAL SKILLS</h2>
+                <div class="skills-grid">
+                    <div>
+                        <div class="skill-group-label">Programming</div>
+                        <div class="chips">
+                            <div class="chip">Java</div>
+                            <div class="chip">SQL</div>
+                            <div class="chip">HTML</div>
+                            <div class="chip">CSS</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="skill-group-label">IoT and Embedded</div>
+                        <div class="chips">
+                            <div class="chip">NodeMCU (ESP8266)</div>
+                            <div class="chip">ESP32</div>
+                            <div class="chip">Arduino</div>
+                            <div class="chip">Sensor Integration</div>
+                            <div class="chip">Motor Control</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="skill-group-label">Cloud and Databases</div>
+                        <div class="chips">
+                            <div class="chip">Firebase</div>
+                            <div class="chip">AWS</div>
+                            <div class="chip">MySQL</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="skill-group-label">AI and Data</div>
+                        <div class="chips">
+                            <div class="chip">LSTM</div>
+                            <div class="chip">Data Analysis</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="skill-group-label">Tools</div>
+                        <div class="chips">
+                            <div class="chip">Git</div>
+                            <div class="chip">GitHub</div>
+                            <div class="chip">Arduino IDE</div>
+                            <div class="chip">Power BI</div>
+                            <div class="chip">Figma</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="dev-section" id="experience">
+            <div class="section-inner reveal">
+                <div class="section-tag">03 // EXPERIENCE_LOG</div>
+                <h2 class="section-title">EXPERIENCE</h2>
+                <div class="exp-card">
+                    <div class="exp-accent"></div>
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-role">IoT Research Intern</div>
+                            <div class="exp-org">Christian Medical College (CMC), Vellore</div>
+                        </div>
+                        <div class="exp-date">May 2025 – June 2025</div>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>Developed portable IoT-based Visual Evoked Potential (VEP) medical device for neural signal acquisition</li>
+                        <li>Designed biomedical signal analysis and visualization software</li>
+                        <li>Built Galvanic Skin Response (GSR) system for physiological monitoring</li>
+                        <li>Integrated devices with Firebase cloud platform for real-time monitoring and storage</li>
+                        <li>Implemented complete embedded, software, and cloud deployment</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="dev-section alt-bg" id="projects">
+            <div class="section-inner reveal">
+                <div class="section-tag">04 // DEPLOYMENTS</div>
+                <h2 class="section-title">PROJECTS</h2>
+                <div class="projects-grid">
+                    
+                    <div class="project-card">
+                        <div class="patent-badge">Patent No. 202541093732</div>
+                        <h3 class="project-title">Hybrid EMG-Controlled Bionic Arm</h3>
+                        <p class="project-desc">Amputees lack affordable, responsive prosthetics — built a 5-DOF EMG-controlled bionic arm that reads muscle signals and drives real-time finger movement via NodeMCU, with Firebase-based wireless monitoring.</p>
+                        <div class="stack-row">
+                            <div class="stack-tag">Embedded C</div>
+                            <div class="stack-tag">NodeMCU</div>
+                            <div class="stack-tag">EMG Sensors</div>
+                            <div class="stack-tag">Servo Motors</div>
+                            <div class="stack-tag">Firebase</div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="patent-badge">Patent No. 202541115885</div>
+                        <h3 class="project-title">StepSafe</h3>
+                        <p class="project-desc">Parkinson’s Gait Detection System. Built a wearable IoT system using EMG and IMU sensor fusion with an LSTM model to detect anomalies and alert caregivers via Firebase in real time.</p>
+                        <div class="stack-row">
+                            <div class="stack-tag">Python</div>
+                            <div class="stack-tag">TensorFlow</div>
+                            <div class="stack-tag">ESP32</div>
+                            <div class="stack-tag">IMU Sensors</div>
+                            <div class="stack-tag">Firebase</div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-tag">Full-Stack Web App</div>
+                        <h3 class="project-title">Track & Study</h3>
+                        <p class="project-desc">AI-Powered Student Learning Platform with AI quiz generation, exam scheduling, goal tracking, Pomodoro timer, and VTOP portal automation via Selenium.</p>
+                        <div class="stack-row">
+                            <div class="stack-tag">PHP</div>
+                            <div class="stack-tag">MySQL</div>
+                            <div class="stack-tag">Python</div>
+                            <div class="stack-tag">JavaScript</div>
+                            <div class="stack-tag">Selenium</div>
+                            <div class="stack-tag">REST APIs</div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-tag">Security Project</div>
+                        <h3 class="project-title">Secure Communication & MFA System</h3>
+                        <p class="project-desc">Built a full-stack platform with Multi-Factor Authentication, AES encrypted transmission, and JWT-based session management to prevent SQL injection and XSS vulnerabilities.</p>
+                        <div class="stack-row">
+                            <div class="stack-tag">Flask</div>
+                            <div class="stack-tag">JavaScript</div>
+                            <div class="stack-tag">MySQL</div>
+                            <div class="stack-tag">JWT</div>
+                            <div class="stack-tag">AES Encryption</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications & Leadership -->
+        <section class="dev-section" id="contact">
+            <div class="section-inner reveal">
+                <div class="section-tag">05 // CREDENTIALS_&_CONTACT</div>
+                <h2 class="section-title">CERTIFICATIONS & LEADERSHIP</h2>
+                
+                <div class="cert-grid">
+                    <div class="cert-card">
+                        <div class="cert-icon">📜</div>
+                        <div>
+                            <div class="cert-name">HTML and CSS Certification</div>
+                            <div class="cert-issuer">Coursera</div>
+                        </div>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon">🏥</div>
+                        <div>
+                            <div class="cert-name">Internship Certification</div>
+                            <div class="cert-issuer">Christian Medical College</div>
+                        </div>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon">🏆</div>
+                        <div>
+                            <div class="cert-name">Innovation Week Hackathon</div>
+                            <div class="cert-issuer">Participant</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="leader-list">
+                    <div class="leader-item">
+                        <div class="leader-dot"></div>
+                        <div class="leader-text">Chairperson — VIT Community Radio</div>
+                        <div class="leader-year">2024– 2025</div>
+                    </div>
+                    <div class="leader-item">
+                        <div class="leader-dot"></div>
+                        <div class="leader-text">Gravitas Manager — VIT Technical Fest</div>
+                        <div class="leader-year">2025</div>
+                    </div>
+                    <div class="leader-item">
+                        <div class="leader-dot"></div>
+                        <div class="leader-text">Riviera Organizer — VIT Cultural Fest</div>
+                        <div class="leader-year">2026</div>
+                    </div>
+                    <div class="leader-item">
+                        <div class="leader-dot"></div>
+                        <div class="leader-text">Patent Published — Hybrid Bionic Arm and Parkinson Detection System</div>
+                        <div class="leader-year">2025</div>
+                    </div>
+                </div>
+
+                <!-- Contact Grid -->
+                <div class="contact-wrap" style="margin-top: 80px;">
+                    <div class="contact-headline">LET'S <span>CONNECT</span></div>
+                    <div class="contact-links">
+                        <a href="mailto:tharun2004.s@gmail.com" class="contact-link">
+                            <div class="contact-link-icon">✉️</div>
+                            <div class="contact-link-info">
+                                <span class="contact-link-label">Email</span>
+                                <span class="contact-link-value">tharun2004.s@gmail.com</span>
+                            </div>
+                        </a>
+                        <a href="https://linkedin.com/in/tharun-sivaprakash-026b24364" target="_blank" class="contact-link">
+                            <div class="contact-link-icon">💼</div>
+                            <div class="contact-link-info">
+                                <span class="contact-link-label">LinkedIn</span>
+                                <span class="contact-link-value">Tharun Sivaprakash</span>
+                            </div>
+                        </a>
+                        <a href="https://github.com/TharunSivaprakash" target="_blank" class="contact-link">
+                            <div class="contact-link-icon">💻</div>
+                            <div class="contact-link-info">
+                                <span class="contact-link-label">GitHub</span>
+                                <span class="contact-link-value">TharunSivaprakash</span>
+                            </div>
+                        </a>
+                        <div class="contact-link">
+                            <div class="contact-link-icon">📱</div>
+                            <div class="contact-link-info">
+                                <span class="contact-link-label">Phone</span>
+                                <span class="contact-link-value">9543008915</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <footer class="dev-footer">
+            <p>THARUN_SIVAPRAKASH.TERMINATE() // 2026</p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        // Parallax Effect for Hero Image
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            const heroImg = document.querySelector('.dev-hero-img');
+            if (heroImg) {
+                // Slower scroll for the background creates the parallax illusion
+                heroImg.style.transform = `translateY(${scrolled * 0.5}px) scale(1.05)`;
+            }
+        });
+    </script>
+</body>
+</html>
