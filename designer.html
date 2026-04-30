@@ -436,51 +436,48 @@
             document.querySelectorAll('.cv-hero .reveal').forEach(el => el.classList.add('in-view'));
         }, 100);
 
-        // Automatically load any images from the gallery folder
-        async function loadGalleryAutomatically() {
-            try {
-                // This fetch works when hosted on a local server (like VS Code Live Server)
-                const response = await fetch('assets/gallery/');
-                if (!response.ok) return;
-                
-                const text = await response.text();
-                
-                // Extract all image links from the directory listing HTML
-                const regex = /href="([^"]+\.(jpg|jpeg|png|gif|webp))"/gi;
-                let match;
-                const images = [];
-                
-                while ((match = regex.exec(text)) !== null) {
-                    let src = match[1];
-                    // Clean up the path depending on how the server formats it
-                    if (!src.includes('assets/gallery/')) {
-                        src = 'assets/gallery/' + src.split('/').pop(); 
-                    }
-                    src = decodeURI(src);
-                    if (!images.includes(src)) {
-                        images.push(src);
-                    }
-                }
-                
-                // If we found images automatically, replace the static grid!
-                if (images.length > 0) {
-                    const grid = document.querySelector('.gallery-grid');
-                    grid.innerHTML = ''; 
-                    
-                    images.forEach(src => {
-                        const item = document.createElement('div');
-                        item.className = 'gallery-item reveal in-view';
-                        item.onclick = () => openLightbox(src);
-                        item.innerHTML = `
-                            <img src="${src}" alt="Design" loading="lazy">
-                            <div class="gallery-caption"><h4>Design</h4></div>
-                        `;
-                        grid.appendChild(item);
-                    });
-                }
-            } catch (e) {
-                console.log("Automatic gallery loading requires a local web server (like Live Server). Using fallback images.");
-            }
+        // Automatically load all images from the gallery folder
+        function loadGalleryAutomatically() {
+            // Hardcoded array to ensure it works on GitHub Pages without directory listing
+            const images = [
+                "1.jpg", "11.jpg", "13.jpg", "14.jpg", "15.jpg", "16.jpg", "19.jpg",
+                "1_20250307_224058_0000.jpg", "2.jpg", "20240812_171444_0000.png", "21.jpg",
+                "24.jpg", "26.jpg", "27.jpg", "28.jpg", "29.jpg", "2_20250307_224058_0001.jpg",
+                "3.jpg", "31.jpg", "5.jpg", "6.jpg", "6_retroza.jpg", "7.jpg",
+                "Blue Minimalist Concert Music Cover Poster.png", "Image_1000.jpg", "Image_2000.jpg",
+                "Image_3000.jpg", "Image_4000.jpg", "Image_6 (24).jpg", "Image_6 (25).jpg",
+                "Image_6 (28).jpg", "Image_6 (29).jpg", "Image_6 (30).jpg", "Image_6 (32).jpg",
+                "Image_Image_1000000.jpg", "Image_Image_10000000.jpg", "Image_Image_11000000.jpg",
+                "Image_Image_13000000.jpg", "Image_Image_2000000.jpg", "Image_Image_30.jpg",
+                "Image_Image_3000000.jpg", "Image_Image_40.jpg", "Image_Image_4000000.jpg",
+                "Image_Image_6000000.jpg", "Image_Image_7000000.jpg", "Image_Image_8000000.jpg",
+                "Image_Image_Image_summa.jpg", "Image_Image_expo 1000000.jpg", "Image_summa (2).jpg",
+                "Image_summa (3).jpg", "Image_summa (5).jpg", "Image_summa (6).jpg",
+                "Image_summa (8).jpg", "anti ragging poster.jpg", "expo 1.jpg", "ikea.jpg",
+                "newyear poster_20250307_224125_0000.jpg", "sample3.jpg", "sangamam_vit-20240812-0001.jpg",
+                "vitradio-20240114-0001(1).jpg", "vitradio-20250307-0001.jpg"
+            ];
+            
+            const grid = document.querySelector('.gallery-grid');
+            grid.innerHTML = ''; 
+            
+            const localObserver = new IntersectionObserver(entries => {
+                entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+            }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+            images.forEach((filename, i) => {
+                const src = 'assets/gallery/' + filename;
+                const item = document.createElement('div');
+                item.className = 'gallery-item reveal';
+                item.style.transitionDelay = (i % 8) * 0.08 + 's';
+                item.onclick = () => openLightbox(src);
+                item.innerHTML = `
+                    <img src="${src}" alt="Design" loading="lazy">
+                    <div class="gallery-caption"><h4>Design</h4></div>
+                `;
+                grid.appendChild(item);
+                localObserver.observe(item);
+            });
         }
 
         // Run the auto-loader
