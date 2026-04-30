@@ -229,10 +229,14 @@
             cursor: pointer;
             transition: all 0.4s;
             background: rgba(0,0,0,0.5);
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
         }
         
         .gallery-item:hover { 
-            transform: scale(1.03) translateY(-5px); 
+            transform: scale(1.03) translateY(-5px) translateZ(0); 
             border-color: #00ff66; 
             box-shadow: 0 15px 30px rgba(0,0,0,0.5);
         }
@@ -242,6 +246,7 @@
             height: 100%; 
             object-fit: cover; 
             transition: 0.5s;
+            display: block;
         }
         
         .gallery-item:hover img {
@@ -290,6 +295,7 @@
             .timeline-grid { grid-template-columns: 1fr; }
             .cv-bg-image { width: 100%; mask-image: none; -webkit-mask-image: none; opacity: 0.2; }
             .glass-box { padding: 30px 20px; }
+            .gallery-caption { opacity: 1; background: linear-gradient(transparent, rgba(0,0,0,0.8)); }
         }
     </style>
 </head>
